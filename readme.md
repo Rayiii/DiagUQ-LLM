@@ -74,14 +74,17 @@ study.
 
 DiagUQ surpasses all baseline methods on all datasets, indicating that leveraging internal hidden-state features via supervised diagnostic modeling results in more stable performance compared to relying solely on output probabilities, entropy, or ask4conf.
 
+<div align="center">
+
 | Dataset    | DiagUQ AUROC | Ask4Conf AUROC | Entropy AUROC | MaxProb AUROC |
-| ---------- | -----------: | -------------: | ------------: | ------------: |
+| :----------: | :-----------: | :-------------: | :------------: | :------------: |
 | TriviaQA   |    **0.840** |          0.817 |         0.549 |         0.453 |
 | AmbigQA    |    **0.785** |          0.723 |         0.510 |         0.483 |
 | TruthfulQA |    **0.655** |          0.647 |         0.559 |         0.462 |
 | MMLU       |    **0.763** |          0.669 |         0.449 |         0.486 |
 | WMT        |    **0.602** |          0.523 |         0.527 |         0.500 |
 
+</div>
 
 Layer-ablation results support the main design choice in DiagUQ: uncertainty
 signals are not concentrated in one universally optimal hidden layer, and
@@ -93,23 +96,31 @@ The best fixed layer changes across datasets, ranging from layer 16 to
 layer 32. This makes a single hand-picked hidden layer a brittle design
 choice for cross-task uncertainty estimation.
 
+<div align="center">
+
 | Dataset | Best fixed layer |
-| --- | ---: |
+| :---: | :---: |
 | TriviaQA | 16 |
 | AmbigQA | 24 |
 | TruthfulQA | 32 |
 | MMLU | 24 |
 | WMT14 | 16 |
 
+</div>
+
 Across the five evaluated datasets, DiagUQ improves both ranking quality
 and calibration over fixed-layer and simple multi-layer alternatives.
 
+<div align="center">
+
 | Method | Avg AUROC ↑ | Avg ECE ↓ | Avg Brier ↓ |
-| --- | ---: | ---: | ---: |
+| :---: | :---: | :---: | :---: |
 | DiagUQ | **0.749** | **0.081** | **0.190** |
 | Selected fixed layer | 0.697 | 0.259 | 0.261 |
 | Uniform layer mean | 0.679 | 0.262 | 0.271 |
 | Fixed layer concat | 0.618 | 0.300 | 0.299 |
+
+</div>
 
 DiagUQ improves average AUROC by +0.052 over the selected fixed-layer
 baseline while reducing average ECE by 0.177 and Brier score by 0.071.
@@ -117,10 +128,14 @@ Paired bootstrap tests further show that DiagUQ significantly outperforms
 uniform multi-layer averaging and fixed multi-layer concatenation on AUROC
 for all five datasets.
 
+<div align="center">
+
 | Comparison | Avg Δ AUROC ↑ | Significant AUROC gains |
-| --- | ---: | ---: |
+| :--- | :---: | :---: |
 | DiagUQ vs. uniform layer mean | +0.069 | 5/5 datasets |
 | DiagUQ vs. fixed layer concat | +0.131 | 5/5 datasets |
+
+</div>
 
 
 ## Installation
