@@ -1,0 +1,78 @@
+# DiagUQ runtime environment
+#
+# Curated environment targeting:
+#   - Python 3.12
+#   - CUDA 12.8
+#   - PyTorch 2.8.0 / torchvision 0.23.0 / torchaudio 2.8.0
+#
+# PyTorch is intentionally NOT installed by this file. Install it after
+# `conda env create` via the official CUDA 12.8 wheel index:
+#
+#   bash scripts/install_torch_cu128.sh
+#
+# This avoids `conda env create` failures caused by generic pip mirrors
+# being unable to resolve `torch==2.8.0+cu128` style pins, which is the
+# usual source of mixed-stack breakage on AutoDL.
+#
+name: diaguq
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12
+  - pip
+
+  # core scientific stack
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+
+  # CLI / config / IO
+  - pyyaml
+  - click
+  - tqdm
+  - requests
+
+  # interactive analysis tooling
+  - ipykernel
+  - jupyter_core
+
+  - pip:
+      # --- Hugging Face stack ---
+      - transformers>=4.46
+      - accelerate>=1.0
+      - huggingface_hub>=0.26
+      - tokenizers>=0.20
+      - safetensors>=0.4.5
+      - sentencepiece>=0.2.0
+      - datasets>=3.0
+
+      # --- text / metric helpers used by the response cache ---
+      - rouge-score>=0.1.2
+      - nltk>=3.9
+      - loguru>=0.7
+
+      # --- arrow / IO support that `datasets` pulls in transitively
+      # (kept explicit so a stale cache cannot mismatch versions) ---
+      - pyarrow>=17
+      - pyarrow-hotfix
+      - filelock
+      - regex
+      - beautifulsoup4
+      - aiohttp
+      - frozenlist
+      - multidict
+      - yarl
+      - attrs
+      - dill
+      - multiprocess
+      - xxhash
+
+      # --- optional: HF `evaluate` is not required by the core pipeline.
+      # Install on demand:
+      #     pip install evaluate
