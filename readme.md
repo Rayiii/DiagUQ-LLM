@@ -104,7 +104,7 @@ choice for cross-task uncertainty estimation.
 | AmbigQA | 24 |
 | TruthfulQA | 32 |
 | MMLU | 24 |
-| WMT14 | 16 |
+| WMT | 16 |
 
 </div>
 
@@ -140,7 +140,7 @@ for all five datasets.
 
 ## Installation
 
-DiagUQ targets Python 3.12, CUDA 12.8, and PyTorch 2.8.0.
+DiagUQ targets Python 3.12, CUDA 12.8, and PyTorch 2.8.0. (H800 * 4)
 
 ```bash
 conda env create -f environment.yaml
