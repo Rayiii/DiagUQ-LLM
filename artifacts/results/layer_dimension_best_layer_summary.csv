@@ -1,0 +1,22 @@
+dataset,dimension,metric,best_layer,best_layer_score,second_best_layer,second_best_layer_score,layer_spread,target_status,target_source,target_reliability,preference_note
+triviaqa__validation,ambiguity,ambiguity_metric,16,0.5602899945246309,24,0.49426098948709246,0.09146222248421765,proxy,semantic_dispersion_proxy,0.5,dimension-specific layer preference observed.
+triviaqa__validation,knowledge_gap,knowledge_gap_metric,16,0.45022926069083263,24,0.3992903053403687,0.10928198452132448,proxy,qa_alias_f1_correctness_proxy,0.8,dimension-specific layer preference observed.
+triviaqa__validation,predictive_variability,predictive_variability_metric,16,0.652242492076035,24,0.6072974134489054,0.13193442647335674,proxy,sampling_disagreement_proxy,0.7,dimension-specific layer preference observed.
+triviaqa__validation,all_dimensions,mean_diagonal_margin,24,0.04249207105786242,8,0.031193001133262843,0.039143466760502954,available,multiple_dimensions,,dimension-specific layer preference observed.
+triviaqa__validation,all_dimensions,max_prediction_prediction_corr,16,0.8683917562454332,24,0.7989024382522849,0.08826061217084069,available,multiple_dimensions,,dimension-specific layer preference observed.
+ambigqa__validation,ambiguity,ambiguity_metric,32,0.588933326599978,24,0.5596662759771656,0.17090817712223655,dataset_grounded,answer_cluster_or_ambiguity_annotation,1.0,dimension-specific layer preference observed.
+ambigqa__validation,knowledge_gap,knowledge_gap_metric,24,0.3479206365139827,16,0.338338385980944,0.09697033464601185,proxy,qa_alias_f1_correctness_proxy,0.8,dimension-specific layer preference observed.
+ambigqa__validation,predictive_variability,predictive_variability_metric,32,0.6248316006190345,24,0.5955533539641382,0.2188522090600145,proxy,sampling_disagreement_proxy,0.7,dimension-specific layer preference observed.
+ambigqa__validation,all_dimensions,mean_diagonal_margin,24,0.01867071797804241,8,0.009303842778606889,0.0292447528191818,available,multiple_dimensions,,dimension-specific layer preference observed.
+ambigqa__validation,all_dimensions,max_prediction_prediction_corr,24,0.813817087878806,32,0.7854008692270591,0.14488938397993323,available,multiple_dimensions,,dimension-specific layer preference observed.
+truthfulqa__validation_eval,knowledge_gap,knowledge_gap_metric,8,0.5196139605640034,32,0.4920835065705565,0.09964136129578233,dataset_grounded,truthfulness_correctness_label,1.0,dimension-specific layer preference observed.
+truthfulqa__validation_eval,predictive_variability,predictive_variability_metric,16,0.37229738247066674,24,-0.018873214951253815,0.4065107597091586,proxy,sampling_disagreement_proxy,0.7,dimension-specific layer preference observed.
+truthfulqa__validation_eval,all_dimensions,mean_diagonal_margin,16,0.4853718614235128,8,0.31537656412854487,0.3117233419056984,available,multiple_dimensions,,dimension-specific layer preference observed.
+truthfulqa__validation_eval,all_dimensions,max_prediction_prediction_corr,16,0.20792288909150852,24,0.2047188564410301,0.1402732290919113,available,multiple_dimensions,,dimension-specific layer preference observed.
+mmlu__validation,knowledge_gap,knowledge_gap_metric,16,0.3924597872099864,24,0.3584449565835189,0.09025241107915111,proxy,multiple_choice_correctness_proxy,0.8,dimension-specific layer preference is weak for this dataset.
+mmlu__validation,all_dimensions,max_prediction_prediction_corr,16,0.4808027547262287,8,0.4494357398548263,0.24833626303674988,available,multiple_dimensions,,dimension-specific layer preference is weak for this dataset.
+wmt__test,ambiguity,ambiguity_metric,24,0.058003783515593516,8,0.05489393660029231,0.019254604908014637,proxy,translation_diversity_proxy,0.5,dimension-specific layer preference observed.
+wmt__test,knowledge_gap,knowledge_gap_metric,16,0.16407740705552662,8,0.10905315862078399,0.15898705192832338,proxy,translation_quality_proxy,0.6,dimension-specific layer preference observed.
+wmt__test,predictive_variability,predictive_variability_metric,24,-0.006968238301814197,8,-0.02532975556064822,0.03060020118486109,proxy,translation_sampling_diversity_proxy,0.7,dimension-specific layer preference observed.
+wmt__test,all_dimensions,mean_diagonal_margin,16,0.03982719569044405,8,0.025526211213624365,0.09333956694956536,available,multiple_dimensions,,dimension-specific layer preference observed.
+wmt__test,all_dimensions,max_prediction_prediction_corr,16,0.3097877452175435,8,0.10588422404242051,0.2625387431078898,available,multiple_dimensions,,dimension-specific layer preference observed.
